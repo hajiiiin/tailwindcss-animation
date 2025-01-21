@@ -40,14 +40,13 @@ const reviews = [
 
 export default function pocket() {
   return (
-    <div>
-      <div className="bg-gradient-marquee">dddd</div>
-      <main className="h-[49rem] overflow-hidden bg-gray-50 p-8 max-w-7xl mx-auto flex space-x-8 ">
+    <div className="relative h-[49rem]  bg-gray-50">
+      {/* 상단 Gradient Overlay  overflow-hidden*/}
+      <div className="absolute inset-x-0 h-32 bg-gradient-to-b from-gray-50 via-gray-50/70 to-transparent z-10 pointer-events-none"></div>
+
+      <main className="p-8 max-w-7xl mx-auto flex space-x-8 ">
         {/* 애니메이션 컨테이너 */}
-        <div
-          className="relative animate-marquee-up-slow"
-          style={{ animationDelay: "0" }}
-        >
+        <div className="relative animate-marquee-up-slow delay-0">
           {reviews.map((review, index) => (
             <div key={review.id}>
               <Card>
@@ -62,10 +61,7 @@ export default function pocket() {
           ))}
         </div>
         {/* 두 번째 줄 */}
-        <div
-          className="relative animate-marquee-up-slow"
-          style={{ animationDelay: "2" }}
-        >
+        <div className="relative animate-marquee-up-slow delay-4">
           {reviews.map((review) => (
             <Card key={`medium-${review.id}`}>
               <Card.Content>
@@ -78,6 +74,8 @@ export default function pocket() {
           ))}
         </div>
       </main>
+      {/* 하단 Gradient Overlay */}
+      <div className="absolute inset-x-0 h-32 bg-gradient-to-t from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
     </div>
   );
 }

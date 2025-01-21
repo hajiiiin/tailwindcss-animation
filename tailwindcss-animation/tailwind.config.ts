@@ -19,11 +19,7 @@ export default {
       },
       animationDelay: {
         "0": "0s",
-        "2": "2s",
-      },
-      backgroundImage: {
-        "gradient-marquee":
-          "linear-gradient(to bottom, rgba(0, 0, 0, 1), rgb(252, 0, 0, 0))",
+        "4": "4s",
       },
     },
   },
