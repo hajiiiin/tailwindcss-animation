@@ -40,43 +40,15 @@ const reviews = [
 
 export default function pocket() {
   return (
-    <main className="overflow-hidden bg-gray-100 p-8 max-w-7xl mx-auto">
+    <main className="h-[49rem] overflow-hidden bg-gray-100 p-8 max-w-7xl mx-auto flex space-x-8">
       {/* 애니메이션 컨테이너 */}
-      <div className="relative animate-marquee-up-medium">
-        {/* Grid 컨테이너 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review, index) => (
-            <div key={review.id}>
-              <Card>
-                <Card.Content>
-                  <Card.Review>{review.review}</Card.Review>
-                  <Card.Title>{review.title}</Card.Title>
-                  <Card.Text>{review.text}</Card.Text>
-                  <Card.Description>{review.user}</Card.Description>
-                </Card.Content>
-              </Card>
-            </div>
-          ))}
-          {/* 무한 반복을 위해 동일한 데이터를 한 번 더 추가 */}
-          {reviews.map((review) => (
-            <div key={`duplicate-${review.id}`}>
-              <Card>
-                <Card.Content>
-                  <Card.Review>{review.review}</Card.Review>
-                  <Card.Title>{review.title}</Card.Title>
-                  <Card.Text>{review.text}</Card.Text>
-                  <Card.Description>{review.user}</Card.Description>
-                </Card.Content>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* 두 번째 줄: 느린 속도 */}
-      <div className="relative animate-marquee-up-slow">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <Card key={`medium-${review.id}`}>
+      <div
+        className="relative animate-marquee-up-slow"
+        style={{ animationDelay: "0" }}
+      >
+        {reviews.map((review, index) => (
+          <div key={review.id}>
+            <Card>
               <Card.Content>
                 <Card.Review>{review.review}</Card.Review>
                 <Card.Title>{review.title}</Card.Title>
@@ -84,8 +56,24 @@ export default function pocket() {
                 <Card.Description>{review.user}</Card.Description>
               </Card.Content>
             </Card>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
+      {/* 두 번째 줄 */}
+      <div
+        className="relative animate-marquee-up-slow"
+        style={{ animationDelay: "2" }}
+      >
+        {reviews.map((review) => (
+          <Card key={`medium-${review.id}`}>
+            <Card.Content>
+              <Card.Review>{review.review}</Card.Review>
+              <Card.Title>{review.title}</Card.Title>
+              <Card.Text>{review.text}</Card.Text>
+              <Card.Description>{review.user}</Card.Description>
+            </Card.Content>
+          </Card>
+        ))}
       </div>
     </main>
   );
