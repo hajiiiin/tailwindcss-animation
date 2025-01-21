@@ -10,7 +10,7 @@ export interface CardProps {
 // 상위 Card 컴포넌트
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-1 p-6 border rounded-lg mb-4 shadow-md hover:shadow-lg transition-shadow">
+    <div className="flex flex-1 p-6 rounded-3xl mb-4 shadow-md hover:shadow-lg transition-shadow bg-white">
       {children}
     </div>
   );

@@ -40,15 +40,34 @@ const reviews = [
 
 export default function pocket() {
   return (
-    <main className="h-[49rem] overflow-hidden bg-gray-100 p-8 max-w-7xl mx-auto flex space-x-8">
-      {/* 애니메이션 컨테이너 */}
-      <div
-        className="relative animate-marquee-up-slow"
-        style={{ animationDelay: "0" }}
-      >
-        {reviews.map((review, index) => (
-          <div key={review.id}>
-            <Card>
+    <div>
+      <div className="bg-gradient-marquee">dddd</div>
+      <main className="h-[49rem] overflow-hidden bg-gray-50 p-8 max-w-7xl mx-auto flex space-x-8 ">
+        {/* 애니메이션 컨테이너 */}
+        <div
+          className="relative animate-marquee-up-slow"
+          style={{ animationDelay: "0" }}
+        >
+          {reviews.map((review, index) => (
+            <div key={review.id}>
+              <Card>
+                <Card.Content>
+                  <Card.Review>{review.review}</Card.Review>
+                  <Card.Title>{review.title}</Card.Title>
+                  <Card.Text>{review.text}</Card.Text>
+                  <Card.Description>{review.user}</Card.Description>
+                </Card.Content>
+              </Card>
+            </div>
+          ))}
+        </div>
+        {/* 두 번째 줄 */}
+        <div
+          className="relative animate-marquee-up-slow"
+          style={{ animationDelay: "2" }}
+        >
+          {reviews.map((review) => (
+            <Card key={`medium-${review.id}`}>
               <Card.Content>
                 <Card.Review>{review.review}</Card.Review>
                 <Card.Title>{review.title}</Card.Title>
@@ -56,25 +75,9 @@ export default function pocket() {
                 <Card.Description>{review.user}</Card.Description>
               </Card.Content>
             </Card>
-          </div>
-        ))}
-      </div>
-      {/* 두 번째 줄 */}
-      <div
-        className="relative animate-marquee-up-slow"
-        style={{ animationDelay: "2" }}
-      >
-        {reviews.map((review) => (
-          <Card key={`medium-${review.id}`}>
-            <Card.Content>
-              <Card.Review>{review.review}</Card.Review>
-              <Card.Title>{review.title}</Card.Title>
-              <Card.Text>{review.text}</Card.Text>
-              <Card.Description>{review.user}</Card.Description>
-            </Card.Content>
-          </Card>
-        ))}
-      </div>
-    </main>
+          ))}
+        </div>
+      </main>
+    </div>
   );
 }
