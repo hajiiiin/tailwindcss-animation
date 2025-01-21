@@ -40,8 +40,8 @@ const reviews = [
 
 export default function pocket() {
   return (
-    <div className="relative h-[49rem]  bg-gray-50">
-      {/* 상단 Gradient Overlay  overflow-hidden*/}
+    <div className="relative h-[49rem] overflow-hidden bg-gray-50">
+      {/* 상단 Gradient Overlay  */}
       <div className="absolute inset-x-0 h-32 bg-gradient-to-b from-gray-50 via-gray-50/70 to-transparent z-10 pointer-events-none"></div>
 
       <main className="p-8 max-w-7xl mx-auto flex space-x-8 ">
@@ -75,7 +75,7 @@ export default function pocket() {
         </div>
       </main>
       {/* 하단 Gradient Overlay */}
-      <div className="absolute inset-x-0 h-32 bg-gradient-to-t from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-50 via-gray-50/70 to-transparent z-20 pointer-events-none"></div>
     </div>
   );
 }
