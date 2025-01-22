@@ -10,12 +10,13 @@ export default {
     extend: {
       keyframes: {
         "marquee-up-slow": {
-          "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-100%)" },
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-50%)" },
         },
       },
       animation: {
         "marquee-up-slow": "marquee-up-slow 20s linear infinite",
+        "spin-slow": "spin 5s linear infinite",
       },
       animationDelay: {
         "0": "0s",
